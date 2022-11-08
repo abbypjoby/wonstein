@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Wonstein",
+    "description": "Howdy registration plugin",
+    "version": "1.0",
+    "action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "background": {
+          "service_worker" : "js/background.js"
+    },
+    "content_scripts":[
+        {
+          "matches":[
+            "https://tamu.collegescheduler.com/*"
+          ],
+          "js": ["js/content.js"]
+        }
+    ],
+    "permissions": [
+        "alarms",
+        "tabs",
+        "notifications",
+        "activeTab",
+        "storage"
+    ]
+}
